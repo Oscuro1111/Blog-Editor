@@ -1,0 +1,41 @@
+#_toolbar{
+    position: sticky;
+    position: -webkit-sticky;
+    top: auto;
+    display: -ms-flexbox;
+    flex-grow: inherit;
+    flex-wrap: wrap;
+    background-color:white;
+    font-family: "Times New Roman";
+    font-size: 1.4rem;
+    padding: 1vw;
+    margin: 0.5vw;
+    overflow-x: -webkit-marquee;
+}
+
+#_toolButton{
+    color: black;
+    font-weight: bolder;
+    margin-left: 1.5rem;
+}
+
+
+img{
+    height: 20px;
+    width: 20px;
+}
+/*
+   Mobile phone view layout.
+*/
+@media only screen and (max-device-width: 500px)  {
+    #_toolButton {
+        margin-left: 3vw;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    img{
+        height: 18px;
+        width: 18px;
+    }
+}
