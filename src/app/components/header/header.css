@@ -1,16 +1,58 @@
 #left_header{
     float: left;
+    margin-right: 86vw;
 }
 
 #right_header{
-    float:right;
+    float: top;
+
 }
 #_header{
+    display: -ms-flexbox;
     color: antiquewhite;
     top:0;
+    flex-shrink: 0.6;
     position: -webkit-sticky;
     position: sticky;
-    padding: 3.5vh;
-    background-color: blueviolet;
+    padding: 1vh;
+    background-color: darkgrey;
 }
 
+#post_btn,#cancel_btn{
+    display: -ms-flex;
+    padding:0.5rem;
+    width: 6rem;
+    height: 3rem;
+    color: white;
+    font-size: 1rem;
+    background-color: blue;
+    font-weight: bold;
+    border-width: 0;
+box-shadow: 0.1px 0.1px;
+}
+
+@media  screen and (max-width: 600px) {
+    #_header{
+        padding: 1vh;
+
+    }
+    #post_btn,#cancel_btn {
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.8rem;
+    }
+}
+@media  screen and (max-width: 420px) {
+
+    #left_header {
+        margin-right: 58vw;
+    }
+}
+
+
+@media  screen and (min-width: 422px) and (max-width: 1460px) {
+
+    #left_header {
+        margin-right: 63vw;
+    }
+}

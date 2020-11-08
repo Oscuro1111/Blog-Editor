@@ -9,8 +9,8 @@ export default class Header extends React.Component{
     render(){
         return (
             <div id={"_header"}>
-                <div id={"left_header"}>Post</div>
-                <div id={"right_header"}>Cancel</div>
+                <div id={"left_header"}><button id={'post_btn'}>Post</button></div>
+                <div id={"right_header"}><button id={'cancel_btn'}>Cancel</button></div>
             </div>
         );
     }
