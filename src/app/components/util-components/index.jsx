@@ -38,7 +38,14 @@ class UploadFile extends React.Component{
 
    async startUploading(){
         const file = this.inputs.file.files[0];
-        var base64=null;
+        let base64=null;
+        this.props.disableCloseBtn();
+        let timeout = setTimeout(
+            ()=>{
+                this.props._done();
+            },
+            this.state.timeout
+        );
         const initConvert = new Promise((
             resolve,reject
         )=>{
@@ -62,7 +69,7 @@ class UploadFile extends React.Component{
             body:{image:base64}
         });
         if(result.ok){
-
+            clearTimeout(timeout);
             let res = await result.json();
             this._doneUploading(`${res.id}`);
         }
@@ -177,7 +184,9 @@ export  class DialogBox extends React.Component{
         this.dbox.closeBtn.disabled=true;
     }
     close(e){
-        e.preventDefault();
+        if(e){
+            e.preventDefault();
+        }
         const home_page     = document.getElementById("home_page");
 
         this.dbox.ref_.style.display = "none";
