@@ -33,4 +33,10 @@
          min-height: 10vh;
 
     }
+
+    img#editor_img{
+        width:  90vw;
+        height: 500px;
+    }
 }
+

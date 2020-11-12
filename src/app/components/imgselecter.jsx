@@ -1,7 +1,7 @@
 import React from 'react';
 // Import React FilePond
 // eslint-disable-next-line no-unused-vars
-import { FilePond } from 'react-filepond'
+//import { FilePond } from 'react-filepond'
 
 // Import FilePond styles
 import 'filepond/dist/filepond.min.css'
@@ -29,14 +29,30 @@ export default class ImageSelect extends React.Component{
             reset:!this.state.reset
         });
     }
+
+    open(e){
+        e.preventDefault();
+
+        const dbox = document.getElementById("d-box");
+        const home_page     = document.getElementById("home_page");
+        home_page.style.display="none";
+        dbox.style.display="block";
+    }
     render(){
-        var x ="<span class='filepond--label-action'>Browse</span>";
+        const x ="<span class='filepond--label-action'>Browse</span>";
 
         return (
             <>
                 <div  className="cross_dropdown_img">
-                    {this.props.icon}
-                    <div  className="cross_dropdown-content_img">
+                    <span onClick={this.open.bind(this)}>{this.props.icon}</span>
+                </div>
+            </>
+        );
+    }
+}
+
+/*
+*  <div  className="cross_dropdown-content_img">
                         <FilePond
                             onprocessfile={(error,file)=>{
                                 //done uploading
@@ -55,8 +71,4 @@ export default class ImageSelect extends React.Component{
                             labelIdle={x}
                              />
                     </div>
-                </div>
-            </>
-        );
-    }
-}
+* */

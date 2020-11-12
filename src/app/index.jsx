@@ -4,8 +4,9 @@ import Header from './components/header';
 import ToolBar from "./components/toolbar";
 import Editor from "./components/editor";
 
-import 'filepond/dist/filepond.min.css'
 
+
+import {DialogBox} from "./components/util-components";
 // Import the Image EXIF Orientation and Image Preview plugins
 // Note: These need to be installed separately
 // `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
@@ -14,11 +15,15 @@ import 'filepond/dist/filepond.min.css'
 //registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 //toolbar
+
 export default class Home extends React.Component{
 
     render(){
 
         return (<>
+
+            <DialogBox />
+            <span id={"home_page"}>
                  <Header />
                 <ToolBar />
                 <br />
@@ -26,6 +31,7 @@ export default class Home extends React.Component{
                 <br />
                 <br />
                 <Editor />
+                </span>
         </>);
     }
 } 

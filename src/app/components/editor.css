@@ -1,7 +1,17 @@
 #editor_box{
     margin-left: 1rem;
     width: 90vw;
-    height: 60vh;
+    height: 80vh;
+    border-width: 1px;
+    overflow: scroll;
+    overflow: -webkit-marquee;
+}
+
+h3{
+    padding:1rem;
+    font-family: Calibri;
+    font-weight: bold;
+    margin:1rem;
 }
 #title_box{
     width: 80vw;

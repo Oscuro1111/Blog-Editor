@@ -166,6 +166,12 @@ div{
 }
 
 
+img#iconImg:hover{
+    cursor: pointer;
+    background-color: lightgreen;
+    padding: 0.01rem;
+}
+
 /*
    Mobile phone view layout.
 */

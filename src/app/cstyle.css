@@ -8,9 +8,11 @@ body{
     display: -ms-flexbox;
 
 }
+
 #_header,#_container,#_footer{
     flex-grow: 0.5;
     flex-shrink: 0.5;
+
     flex-wrap: wrap;
     display: -ms-flexbox;
 }
