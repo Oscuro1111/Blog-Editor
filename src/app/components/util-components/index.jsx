@@ -38,15 +38,24 @@ class UploadFile extends React.Component{
 
    async startUploading(){
         const file = this.inputs.file.files[0];
-        let base64=null;
-        this.props.disableCloseBtn();
+
+
+        this.props.disableCloseBtn(true);
+
         let timeout = setTimeout(
             ()=>{
                 this.props._done();
             },
             this.state.timeout
         );
-        const initConvert = new Promise((
+
+        const formData = new FormData();
+
+
+        formData.append("image",file,file.name);
+
+        /*
+        * const initConvert = new Promise((
             resolve,reject
         )=>{
             const fileReader = new FileReader();
@@ -55,23 +64,30 @@ class UploadFile extends React.Component{
                 base64=fileReader.result.substr(fileReader.result.indexOf(',')+1);
                 resolve(base64);
             }
+
             fileReader.readAsDataURL(file);
-            
         });
 
         await initConvert;
-        
+
+        * */
         this.setState({
             uploading:true,
         });
-        const result = await fetch("https://214b8382-7e22-48e8-95f7-617ca99e5b31.mock.pstmn.io/img",{
+
+        const uid='5f99bc85cc1d398b734582e0-eaf167c82ab63d618aa3e1e93300721fb3264b530d774bbdea3875c3685fd91e';
+
+        const result = await fetch(`http://localhost:3000/blog/${uid}/save/img/${file.name}`,{
             method:"POST",
-            body:{image:base64}
+            headers: {},//setting header will result in duplication as it is implicitly handled.[can cause error:out of boundary]
+            body:formData
         });
+
         if(result.ok){
             clearTimeout(timeout);
             let res = await result.json();
-            this._doneUploading(`${res.id}`);
+            console.log(res);
+            this._doneUploading(`${res.data.result.url}`);
         }
 
         return result;
@@ -79,7 +95,6 @@ class UploadFile extends React.Component{
 
     addImg(e){
         e.preventDefault();
-
         if(this.inputs.fileUrl.value.length>0){
             this._doneUploading(this.inputs.fileUrl.value);
         }
@@ -89,7 +104,16 @@ class UploadFile extends React.Component{
         const editor = document.getElementById("editor_box");
 
         const imgEle = document.createElement("img");
-        const done   = (e)=>this.props._done(e);
+        const done   = (e)=>{
+            this.props._done(e);
+
+
+            this.setState({
+                uploading:false
+            });
+            this.props.disableCloseBtn(false);
+        };
+
         //lazy load
         imgEle.onload=function(e){
             const img_ = document.createElement("img");
@@ -99,6 +123,7 @@ class UploadFile extends React.Component{
             img_.style.width="60vw";
             editor.appendChild(img_);
             done(e);
+
         }
 
         imgEle.src=imgUrl;
@@ -144,9 +169,10 @@ class UploadFile extends React.Component{
                           e=>{
                               e.preventDefault();
                               const res =this.startUploading();
-                              res.then(msg=>{
-                                  console.log(msg);
-                              })
+
+                              res.catch(err=>{
+                                  console.error(err);
+                              });
                           }
                       } id={"d-upload-btn"}>
                           upload
@@ -180,8 +206,8 @@ export  class DialogBox extends React.Component{
         }
     }
 
-    disableCloseBtn(){
-        this.dbox.closeBtn.disabled=true;
+    disableCloseBtn(flg){
+        this.dbox.closeBtn.disabled=flg;
     }
     close(e){
         if(e){
