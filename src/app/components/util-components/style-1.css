@@ -1,0 +1,124 @@
+
+
+#d-box{
+    position: -ms-device-fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: grey;
+    z-index: 1;
+}
+
+#d-controller{
+    display: -ms-flexbox;
+    width: 100%;
+}
+
+#d-controller-right{
+    float:right ;
+}
+
+#d-content{
+    margin-top: 18%;
+    margin-left: 30%;
+    margin-right:30%;
+    display: -ms-flexbox;
+    width: 40%;
+    min-height: 20%;
+    align-content: center;
+    background-color: white;
+}
+
+#d-controller button {
+    border-width: 0;
+    border-radius: 30%;
+    padding:0.4rem;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    margin-top:-0.2rem;
+}
+#d-controller button:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+@media only screen and (max-width: 1000px) {
+    #d-content {
+        width: 70%;
+        margin-top: 30%;
+        margin-right: 15%;
+        margin-left: 15%;
+        min-height: 40%;
+    }
+
+
+    #d-controller button {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+}
+
+#cross-dev-main-content legend{
+    padding:0.4rem;
+    font-weight: bold;
+}
+#cross-dev-main-content fieldset{
+    padding: 1rem;
+    font-family:Calibri;
+}
+
+#cross-dev-main-content{
+
+    display: -ms-flex;
+    flex-wrap: wrap;
+    margin:1rem;
+
+}
+
+#d-upload-btn,#d-add-btn{
+    border: 0;
+    padding:0.5rem;
+    background-color: green;
+    color: white;
+    margin:0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#d-upload-btn:hover,#d-add-btn:hover {
+    cursor:pointer;
+    background-color: grey;
+}
+
+
+#cross-dev-main-content input{
+    padding:0.2rem;
+    font-weight: bold;
+    margin:0.3rem;
+}
+
+#cross-dev-main-content label{
+    margin:0.2rem;
+    font-weight: bold;
+    padding:0.1rem;
+}
+
+#loader img{
+    margin-top: 10%;
+    width: 40%;
+    height: 30%;
+    align-self: center;
+}
+
+@media only screen and (max-width: 800px){
+
+    #loader img{
+        margin-top: 20%;
+    }
+    #d-content{
+        width: 97vw;
+        margin-left:0;
+    }
+}

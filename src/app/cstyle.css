@@ -1,0 +1,19 @@
+body{
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    max-width:100vw ;
+    background-color: whitesmoke;
+
+    display: -ms-flexbox;
+
+}
+
+#_header,#_container,#_footer{
+    flex-grow: 0.5;
+    flex-shrink: 0.5;
+
+    flex-wrap: wrap;
+    display: -ms-flexbox;
+}
+

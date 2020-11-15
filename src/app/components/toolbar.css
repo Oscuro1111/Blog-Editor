@@ -1,0 +1,190 @@
+#_toolbar{
+    position: fixed;
+    position: -webkit-sticky;
+
+    display: -ms-flexbox;
+    flex-grow: inherit;
+    flex-wrap: wrap;
+    background-color:lightgray;
+    font-family: "Times New Roman";
+    font-size: 1.4rem;
+    padding: 1vw;
+    margin: 0.5vw;
+    overflow-x: -webkit-marquee;
+}
+
+#_toolButton{
+    color: black;
+    font-weight: bolder;
+    margin-left: 1.5rem;
+}
+
+
+img{
+    height: 20px;
+    width: 20px;
+}
+
+
+.cross_dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.cross_dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width:100px;
+    background-color: whitesmoke;
+    box-shadow: black;
+}
+
+.cross_dropdown:hover .cross_dropdown-content{
+    display: block;
+}
+
+
+.cross_btn-minus {
+    color:black;
+    background-color: lightgray;
+}
+
+.cross_btn-plus{
+    color:black;
+    background-color: lightgray;
+
+}
+div{
+    padding:0.1rem;
+}
+.cross_show-size{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color:black;
+    font-weight: bolder;
+    background-color: whitesmoke;
+}
+
+
+
+.toolbar_text{
+    font-size: 1rem;
+    font-weight: bold;
+    padding:0.4rem;
+    font-family: "Times New Roman";
+    text-decoration: underline;
+    color: blue;
+}
+
+.cross_dropdown_list{
+    position: relative;
+    display: inline-block;
+}
+
+.cross_dropdown-content_list{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width:150px;
+    background-color: whitesmoke;
+    box-shadow: black;
+}
+
+.cross_dropdown_list:hover .cross_dropdown-content_list{
+    display: block;
+}
+
+
+.cross_dropdown_list button{
+    padding:0.3rem;
+    margin:0.2rem;
+    font-size: 1rem;
+    font-weight: bolder;
+
+
+}
+
+.cross_dropdown_table{
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+
+}
+
+.cross_dropdown-content_table{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width:150px;
+    background-color: whitesmoke;
+    box-shadow: black;
+}
+
+.cross_dropdown_table:hover .cross_dropdown-content_table{
+    display: block;
+}
+
+.cross_dropdown_table button{
+    padding:0.3rem;
+    margin:0.2rem;
+    font-size: 1rem;
+    background-color: green;
+    color:white;
+    font-weight: bold;
+}
+
+/*link opt*/
+.cross_dropdown_link{
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+
+}
+
+.cross_dropdown-content_link{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width:150px;
+    background-color: whitesmoke;
+    box-shadow: black;
+}
+
+.cross_dropdown_link:hover .cross_dropdown-content_link{
+    display: block;
+}
+
+
+.cross_dropdown_link button{
+    padding:0.3rem;
+    margin:0.2rem;
+    font-size: 1rem;
+    background-color: green;
+    color:white;
+    font-weight: bold;
+}
+
+
+img#iconImg:hover{
+    cursor: pointer;
+    background-color: lightgreen;
+    padding: 0.01rem;
+}
+
+/*
+   Mobile phone view layout.
+*/
+@media only screen and (max-device-width: 500px)  {
+    #_toolButton {
+        margin-left: 3vw;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    img{
+        height: 18px;
+        width: 18px;
+    }
+
+}

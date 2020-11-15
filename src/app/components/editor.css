@@ -1,0 +1,31 @@
+#editor_box{
+    margin-left: 1rem;
+    width: 90vw;
+    height: 80vh;
+    border-width: 1px;
+    overflow: scroll;
+    overflow: -webkit-marquee;
+}
+
+h3{
+    padding:1rem;
+    font-family: Calibri;
+    font-weight: bold;
+    margin:1rem;
+}
+#title_box{
+    width: 80vw;
+    max-height: 10vh;
+    overflow-y: scroll;
+    font-size: 1.5rem;
+    color: black;
+    padding: 1rem;
+    margin: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+@media only screen and (max-width: 600px){
+    #title_box{
+        font-size:1rem;
+    }
+}
