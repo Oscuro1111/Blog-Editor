@@ -6,7 +6,7 @@ import loader from '../../assets/toolbar-icons/loader2.gif';
 
 class Loading extends  React.Component{
 
-    render() {
+    render(){
 
         return (
             <center>
@@ -75,7 +75,7 @@ class UploadFile extends React.Component{
             uploading:true,
         });
 
-        const uid='5f99bc85cc1d398b734582e0-eaf167c82ab63d618aa3e1e93300721fb3264b530d774bbdea3875c3685fd91e';
+        const uid='5f99bc85cc1d398b734582e0-4a7a54c499f896fbf7b1adc852632640b8dff51688a2222cc26a331e24ad608e';
 
         const result = await fetch(`http://localhost:3000/blog/${uid}/save/img/${file.name}`,{
             method:"POST",

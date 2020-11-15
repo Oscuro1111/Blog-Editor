@@ -23,13 +23,6 @@ export default class ImageSelect extends React.Component{
         }
     }
 
-
-    resetAll(){
-        this.setState({
-            reset:!this.state.reset
-        });
-    }
-
     open(e){
         e.preventDefault();
 
@@ -39,7 +32,6 @@ export default class ImageSelect extends React.Component{
         dbox.style.display="block";
     }
     render(){
-        const x ="<span class='filepond--label-action'>Browse</span>";
 
         return (
             <>

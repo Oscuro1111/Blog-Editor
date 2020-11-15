@@ -21,17 +21,16 @@ export default class Home extends React.Component{
     render(){
 
         return (<>
-
             <DialogBox />
             <span id={"home_page"}>
                  <Header />
-                <ToolBar />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Editor />
-                </span>
+                 <ToolBar />
+                 <br />
+                 <br />
+                 <br />
+                 <br />
+                 <Editor />
+            </span>
         </>);
     }
 } 

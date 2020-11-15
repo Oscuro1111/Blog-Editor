@@ -184,7 +184,7 @@ class TableOpt extends  React.Component{
 
              for(let c=0;c < cols_;c++){
                  const col = document.createElement("td");
-                 col.style.width="10vw";
+                 col.style.width=`${100/cols_}vw`;
                  col.innerText="col";
                  row.appendChild(col);
              }

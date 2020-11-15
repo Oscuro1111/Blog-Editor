@@ -3,15 +3,17 @@ import React from 'react'
 import './header.css';
 
 
+
 //Header
 export default class Header extends React.Component{
 
 
     onPost(e){
         e.preventDefault();
-        //const content = getElementById("editor_box").innerHTML;
 
-        //this.props.getPost(content);
+        //upload post
+        //change window.location oo the main UI
+
     }
     render(){
         return (
