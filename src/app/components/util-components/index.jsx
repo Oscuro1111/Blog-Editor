@@ -74,9 +74,8 @@ class UploadFile extends React.Component{
         this.setState({
             uploading:true,
         });
-
-        const uid='5f99bc85cc1d398b734582e0-4a7a54c499f896fbf7b1adc852632640b8dff51688a2222cc26a331e24ad608e';
-
+        const uid= document.cookie.split('=').pop();
+  
         const result = await fetch(`http://localhost:3000/blog/${uid}/save/img/${file.name}`,{
             method:"POST",
             headers: {},//setting header will result in duplication as it is implicitly handled.[can cause error:out of boundary]
@@ -86,7 +85,6 @@ class UploadFile extends React.Component{
         if(result.ok){
             clearTimeout(timeout);
             let res = await result.json();
-            console.log(res);
             this._doneUploading(`${res.data.result.url}`);
         }
 
