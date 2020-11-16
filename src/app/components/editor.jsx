@@ -16,11 +16,7 @@ const Title =function(){
 export default class Editor extends React.Component{
  constructor(props) {
      super(props);
-     window.onbeforeunload=function (e){
-         //save the data to database as draft
-         //savePost(data,"draft");
-         return "";
-     }
+ 
      this.state={
          title:null,
          data:null

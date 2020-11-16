@@ -4,7 +4,7 @@ import './style-1.css';
 import loader from '../../assets/toolbar-icons/loader2.gif';
 
 
-class Loading extends  React.Component{
+export class Loading extends  React.Component{
 
     render(){
 
