@@ -7,6 +7,7 @@ import Editor from "./components/editor";
 
 
 import {DialogBox} from "./components/util-components";
+import {PublishBox} from './components/header/postHandler';
 // Import the Image EXIF Orientation and Image Preview plugins
 // Note: These need to be installed separately
 // `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
@@ -21,6 +22,7 @@ export default class Home extends React.Component{
     render(){
 
         return (<>
+             <PublishBox />
             <DialogBox />
             <span id={"home_page"}>
                  <Header />

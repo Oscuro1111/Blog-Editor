@@ -1,0 +1,77 @@
+#meta_container{
+    display: none;
+    width: 98vw;
+    height: 100vh;
+    background-color: grey;
+}
+
+#meta_content{
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 40%;
+    margin-left:30%;
+    margin-right: 30%;
+    margin-top: 20%;
+    height: 50%;
+}
+
+
+#meta_back button{
+    float: right;
+    font-weight: bolder;
+    padding:0.5rem;
+    margin: 1rem;
+    background-color:blue;
+    color:white;
+
+}
+
+#meta_form{
+    width: 100%;
+    flex-wrap: wrap;
+    padding:0.5rem;
+    background-color:lightgreen;
+}
+
+
+#meta_form legend{
+    padding:0.2rem;
+}
+#meta_form input{
+    margin:1rem;
+}
+
+
+#meta_submit_btn{
+ background-color: green;
+ color: white;
+ padding:1rem;
+ margin:0.3rem;
+ font-weight: bold;
+ font-size: 1rem;
+}
+
+#meta_form label{
+    font-weight: bolder;
+    padding:0.2rem;
+    margin:0.3rem;
+}
+
+
+
+#meta_form input{
+    font-weight: bold;
+    padding:0.2rem;
+    margin:0.3rem;
+}
+
+
+@media screen and (max-width:1300px){
+
+    #meta_content{
+        width: 90vw;
+        margin-top:45%;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}

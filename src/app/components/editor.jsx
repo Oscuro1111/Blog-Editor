@@ -5,10 +5,10 @@ const Title =function(){
     return (
         <>
         <h3>
-        Title
+        Topic
         <hr />
         </h3>
-            {"Text..."}
+            {"  Text..."}
         </>
     );
 }
