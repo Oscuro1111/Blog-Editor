@@ -137,7 +137,6 @@ class PublishPost extends React.Component {
 
     e.preventDefault();
 
-
     const file = this.inputs.file.files[0];
 
     const title = this.inputs.title.value;
