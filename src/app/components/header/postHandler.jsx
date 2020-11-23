@@ -22,6 +22,7 @@ class PublishPost extends React.Component {
 
       file: null,
       title: null,
+      tagname: null
     };
 
   }
@@ -29,7 +30,7 @@ class PublishPost extends React.Component {
 
 
 //start posting data to server 
-  async onPost(title, thum, timeout) {
+  async onPost(title, thum, timeout,tagname) {
 
     //upload post
     //change window.location oo the main UI
@@ -49,6 +50,7 @@ class PublishPost extends React.Component {
     formData.append("id", id);
     formData.append('thum', thum);
     formData.append("title", title);
+    formData.append("tagname",tagname);
 
     await fetch(`http://localhost:3000/blog/${document.cookie.split('=')[1]}/save/post`, {
       method: "POST",
@@ -93,7 +95,7 @@ class PublishPost extends React.Component {
 
 
   //start publishing
-  async startPublishing(title, imageFile) {
+  async startPublishing(title, imageFile,tagname) {
 
     const timeout = setTimeout(
       () => {
@@ -113,7 +115,7 @@ class PublishPost extends React.Component {
     try {
       const thumUrl = await this.sendImage(imageFile);
 
-      await this.onPost(title, thumUrl, timeout);
+      await this.onPost(title, thumUrl, timeout,tagname);
 
     } catch (err) {
 
@@ -141,7 +143,9 @@ class PublishPost extends React.Component {
 
     const title = this.inputs.title.value;
 
-    this.startPublishing(title, file);
+    const tagname = this.inputs.tagname.value||"public";
+
+    this.startPublishing(title, file,tagname);
   }
 
 
@@ -157,6 +161,13 @@ class PublishPost extends React.Component {
                 <form action={"#"} id={"meta_form"}>
                   <fieldset>
                     <legend>Meta info</legend>
+                    <label htmlFor={"tagname"}>catogory/tag:</label>
+                    <input ref={r=>{
+                      this.inputs.tagname=r;
+                    }} type="text" id={"tagname"}/>
+
+                    <hr />
+                    
                     <label htmlFor={"title"}>Title Name:</label>
                     <input
                       ref={
@@ -176,6 +187,7 @@ class PublishPost extends React.Component {
                         }
                       }
                       type={"file"} id={"thum"} required />
+
 
                     <input onClick={this.publish.bind(this)} type={"submit"} id={"meta_submit_btn"} value={"publish"} />
                   </fieldset>
